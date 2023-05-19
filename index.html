@@ -108,6 +108,44 @@ p {
     }
   }
 }
+  
+  a {
+  --bg-size: 400%;
+  --color-one: red;
+  --color-two: orange;
+  --color-three: yellow;
+  --color-four: lime;
+  --color-five: aqua;
+  --color-six: blue;
+  --color-seven: magenta;
+  font-family: sans-serif;
+  font-size: 28px;
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-three),
+      var(--color-four),
+      var(--color-five),
+      var(--color-six),
+      var(--color-seven),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    animation: move-bg 16s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
 </style>
 </center>
   
